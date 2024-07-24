@@ -1,0 +1,21 @@
+import * as express from "express";
+import { PrismaClient } from "@prisma/client";
+import { StartedPostgreSqlContainer } from "@testcontainers/postgresql";
+
+import { setupUserRouter } from "@/infra/http/router/user-router";
+import { errorHandler } from "@/infra/http/middleware/error-handler";
+
+import { createPrismaTest } from "./create-prisma-test";
+
+export async function createAppTest(): Promise<{
+  app: express.Application;
+  container: StartedPostgreSqlContainer;
+  prisma: PrismaClient;
+}> {
+  const { container, prisma } = await createPrismaTest();
+  const app = express();
+  app.use(express.json());
+  app.use("/users", setupUserRouter(prisma));
+  app.use(errorHandler);
+  return { app, container, prisma };
+}
