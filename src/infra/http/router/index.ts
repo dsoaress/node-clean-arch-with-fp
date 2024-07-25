@@ -4,9 +4,9 @@ import { PrismaClient } from "@prisma/client";
 import { setupUserRouter } from "./user-router";
 import { errorHandler } from "../middleware/error-handler";
 
-export function setupRouter() {
+export function setupRouter(): Router {
   const prisma = new PrismaClient();
-  const router: Router = Router();
+  const router = Router();
   router.use("/users", setupUserRouter(prisma));
   router.use(errorHandler);
   return router;
