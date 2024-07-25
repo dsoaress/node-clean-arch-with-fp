@@ -1,6 +1,6 @@
 {
   "sonarlint.connectedMode.project": {
     "connectionId": "dsoaress",
-    "projectKey": "node-clean-arch-with-fp"
+    "projectKey": "dsoaress_node-clean-arch-with-fp"
   }
 }
