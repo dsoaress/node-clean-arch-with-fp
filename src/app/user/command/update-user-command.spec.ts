@@ -4,7 +4,7 @@ import { ResourceNotFound } from "@/app/exception/resource-not-found";
 import { ValidationException } from "@/app/exception/validation-exception";
 import { userFake } from "@/shared/tests/user-fake";
 
-describe("UpdateUserCommand", () => {
+describe("updateUserCommand", () => {
   let command: UpdateUserCommand;
   let dao: UserDAO;
 

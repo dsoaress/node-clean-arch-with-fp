@@ -3,7 +3,7 @@ import { DeleteUserCommand, deleteUserCommand } from "./delete-user-command";
 import { ResourceNotFound } from "@/app/exception/resource-not-found";
 import { userFake } from "@/shared/tests/user-fake";
 
-describe("DeleteUserCommand", () => {
+describe("deleteUserCommand", () => {
   let command: DeleteUserCommand;
   let dao: UserDAO;
 
