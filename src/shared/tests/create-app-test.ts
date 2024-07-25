@@ -16,6 +16,7 @@ export async function createAppTest(): Promise<{
   const { container, prisma } = await createPrismaTest();
   const app = express();
   app.use(express.json());
+  app.disable("x-powered-by");
   app.use(inputBodyParserErrorHandler);
   app.use("/users", setupUserRouter(prisma));
   app.use(errorHandler);
