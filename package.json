@@ -28,7 +28,7 @@
     "testcontainers": "10.16.0",
     "ts-jest": "29.4.0",
     "ts-node": "10.9.2",
-    "tsx": "4.19.4",
+    "tsx": "4.20.3",
     "typescript": "5.8.3"
   },
   "prisma": {
